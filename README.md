@@ -180,12 +180,13 @@ sudo vim /etc/apache2/sites-available/catalog.conf
 ```
 
 4. Rename application.py
+
 ```
 mv application.py __init__.py
 ```
 
-
 5. Load database with items
+
 ```
 sudo python load_db.py
 ```
@@ -229,4 +230,4 @@ catalog
 
 ```
 
-Thanks to [DigitalOcrean](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps) for the guide
+Thanks to [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps) for the guide
