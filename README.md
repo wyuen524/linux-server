@@ -29,19 +29,16 @@ sudo apt-get upgrade
 ```
 
 4. Change the SSH port from 22 to 2200 in ```/etc/ssh/sshd_config```
-
 Change `Port 22` to `Port 2200`
 ```
 sudo service ssh restart
 ```
-
 Test with SSH key using the new port
 ```
 ssh ubuntu@18.234.248.46 -i udacity_rsa -p 2200
 ```
 
 5. Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
-
 ```
 sudo ufw allow 2200/tcp
 sudo ufw allow 80/tcp
@@ -59,7 +56,9 @@ sudo adduser grader
 
 2. Give grader the permission to sudo
 Create file ```/etc/sudoers.d/grader``` with following content
-```grader ALL=(ALL) NOPASSWD:ALL```
+```
+grader ALL=(ALL) NOPASSWD:ALL
+```
 
 3. Create an SSH key pair for grader using the ssh-keygen tool
 Run ```ssh-keygen``` on your local machine and provide in the information
@@ -89,7 +88,9 @@ sudo apt install postgresql
 ```
 
 Do not allow remote connections by checking
-```sudo vim /etc/postgresql/9.5/main/pg_hba.conf```
+```
+sudo vim /etc/postgresql/9.5/main/pg_hba.conf
+```
 
 
 4. Create a new database user named catalog
@@ -104,7 +105,9 @@ exit to logout of postgres user
 ```
 
 5. Install git
-```sudo apt install git```
+```
+sudo apt install git
+```
 
 ## Deploy the Item Catalog project
 
@@ -177,11 +180,15 @@ sudo vim /etc/apache2/sites-available/catalog.conf
 ```
 
 4. Rename application.py
-```mv application.py __init__.py```
+```
+mv application.py __init__.py
+```
 
 
 5. Load database with items
-```sudo python load_db.py```
+```
+sudo python load_db.py
+```
 
 6. Enable the virtual host
 ```
